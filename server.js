@@ -60,12 +60,11 @@ app.post("/send-email", async (req, res) => {
 });
 
 //-----------END of SENDGRID----------------
-
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "rootroot",
-    database: "vocabverse",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
 });
 
 db.connect((err) => {
